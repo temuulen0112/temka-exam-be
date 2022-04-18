@@ -2,6 +2,9 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const TodoSchema = new Schema({
+    todoText: {
+        type: String
+    },
     createdAt: {
         type: Date,
         default: Date.now
