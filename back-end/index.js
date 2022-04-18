@@ -1,7 +1,7 @@
 const dotenv = require('dotenv').config();
 const express = require("express");
 const cors = require('cors');
-const api = require('./routes/api');
+const apiRoutes = require('./routes/api');
 const connection = require("./database");
 const app = express();
 
@@ -17,7 +17,7 @@ app.use(function (req, res, next) {
     next();
 });
 
-app.use("/", api);
+app.use("/api", apiRoutes);
 
 app.all("*", (req, res, next) => {
     res.status(404).json({
